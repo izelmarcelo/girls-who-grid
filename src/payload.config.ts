@@ -20,6 +20,11 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
   admin: {
+    meta: {
+      titleSuffix: '- Girls Who Grid',
+      favicon: '/favicon.svg',
+      ogImage: '/website-template-OG.webp',
+    },
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below.
@@ -55,6 +60,7 @@ export default buildConfig({
       ],
     },
   },
+  serverURL: getServerSideURL(),
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
   db: sqliteAdapter({
