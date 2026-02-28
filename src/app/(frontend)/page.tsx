@@ -108,11 +108,11 @@ export default async function HomePage() {
                 href={`/posts/${post.slug}`}
                 className="neu-card p-6 space-y-4 group"
               >
-                {post.hero?.media && typeof post.hero.media !== 'string' && (
+                {post.heroImage && typeof post.heroImage !== 'number' && (
                   <div className="aspect-video rounded-lg overflow-hidden bg-pink-light">
                     <Image
-                      src={post.hero.media.url || ''}
-                      alt={post.hero.media.alt || ''}
+                      src={post.heroImage.url || ''}
+                      alt={post.heroImage.alt || ''}
                       width={400}
                       height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -126,9 +126,9 @@ export default async function HomePage() {
                       {typeof post.categories[0] === 'object' ? post.categories[0].title : ''}
                     </span>
                   )}
-                  {post.meta?.readingTime && (
+                  {post.publishedAt && (
                     <span className="text-xs text-gray-soft font-mono">
-                      {post.meta.readingTime} min read
+                      post
                     </span>
                   )}
                 </div>

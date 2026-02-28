@@ -77,11 +77,11 @@ export default async function PostsPage() {
                 href={`/posts/${post.slug}`}
                 className="neu-card p-6 space-y-4 group hover:scale-[1.02] transition-transform"
               >
-                {post.hero?.media && typeof post.hero.media !== 'string' && (
+                {post.heroImage && typeof post.heroImage !== 'number' && (
                   <div className="aspect-video rounded-lg overflow-hidden bg-pink-light">
                     <Image
-                      src={post.hero.media.url || ''}
-                      alt={post.hero.media.alt || post.title}
+                      src={(post.heroImage as any).url || ''}
+                      alt={(post.heroImage as any).alt || post.title}
                       width={400}
                       height={225}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -93,11 +93,6 @@ export default async function PostsPage() {
                   {post.categories && post.categories.length > 0 && (
                     <span className="inline-block px-3 py-1 bg-lime-accent text-charcoal text-xs font-mono rounded-full">
                       {typeof post.categories[0] === 'object' ? post.categories[0].title : ''}
-                    </span>
-                  )}
-                  {post.meta?.readingTime && (
-                    <span className="text-xs text-gray-soft font-mono">
-                      {post.meta.readingTime} min read
                     </span>
                   )}
                 </div>

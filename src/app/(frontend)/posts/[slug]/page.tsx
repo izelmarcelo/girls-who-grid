@@ -5,7 +5,7 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
-import type { Post } from '@/payload-types'
+// import type { Post } from '@/payload-types'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
@@ -52,11 +52,6 @@ export default async function PostDetailPage({ params: paramsPromise }: Args) {
                 ))}
               </>
             )}
-            {post.meta?.readingTime && (
-              <span className="text-sm text-gray-soft font-mono">
-                {post.meta.readingTime} min read
-              </span>
-            )}
           </div>
 
           {/* Title */}
@@ -76,12 +71,12 @@ export default async function PostDetailPage({ params: paramsPromise }: Args) {
           )}
 
           {/* Hero Image */}
-          {post.hero?.media && typeof post.hero.media !== 'string' && (
+          {post.heroImage && typeof post.heroImage !== 'number' && (
             <div className="neu-card p-4 mb-8">
               <div className="aspect-video rounded-lg overflow-hidden bg-pink-light">
                 <Image
-                  src={post.hero.media.url || ''}
-                  alt={post.hero.media.alt || post.title}
+                  src={(post.heroImage as any).url || ''}
+                  alt={(post.heroImage as any).alt || post.title}
                   width={1200}
                   height={675}
                   className="w-full h-full object-cover"
