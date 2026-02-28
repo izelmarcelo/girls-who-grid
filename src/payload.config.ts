@@ -22,8 +22,6 @@ export default buildConfig({
   admin: {
     meta: {
       titleSuffix: '- Girls Who Grid',
-      favicon: '/favicon.svg',
-      ogImage: '/website-template-OG.webp',
     },
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
