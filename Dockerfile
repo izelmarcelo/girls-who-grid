@@ -14,7 +14,7 @@ ENV NODE_OPTIONS="--no-deprecation --max-old-space-size=1536"
 
 ARG PAYLOAD_SECRET=build-time-secret-will-be-overridden
 ARG NEXT_PUBLIC_SERVER_URL=https://girlswhogrid.com
-ENV DATABASE_URI=file:./data/payload.db
+ENV DATABASE_URL=file:./data/payload.db
 ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
 ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
 
