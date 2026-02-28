@@ -12,6 +12,20 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_OPTIONS="--no-deprecation --max-old-space-size=1536"
 
+# Build-time env vars for Payload CMS
+ARG PAYLOAD_SECRET=build-time-secret-will-be-overridden
+ARG NEXT_PUBLIC_SERVER_URL=https://girlswhogrid.com
+ENV DATABASE_URI=file:./data/payload.db
+ENV PAYLOAD_SECRET=${PAYLOAD_SECRET}
+ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
+
+# Initialize the SQLite database before building so static generation works
+RUN mkdir -p data && node -e "
+const { execSync } = require('child_process');
+// Run payload migrate to create schema
+try { execSync('npx payload migrate', { stdio: 'inherit' }); } catch(e) { console.log('Migration skipped:', e.message); }
+"
+
 RUN pnpm build
 
 EXPOSE 3000

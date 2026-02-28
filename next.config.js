@@ -34,3 +34,5 @@ const nextConfig = {
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
+
+// Force dynamic rendering - needed for SQLite builds in Docker
