@@ -6,7 +6,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import PageClient from './page.client'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
+
 export const revalidate = 600
 
 export default async function PostsPage() {
