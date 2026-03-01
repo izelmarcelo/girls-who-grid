@@ -51,7 +51,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               className="w-12 h-12"
               priority
             />
-            <span className="text-xl font-bold text-charcoal hidden sm:inline font-heading">
+            <span className="text-2xl text-charcoal hidden sm:inline font-heading tracking-wider">
               Girls Who Grid
             </span>
           </Link>
@@ -62,7 +62,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-base font-medium transition-all hover:text-pink-deep ${
+                className={`text-base font-heading tracking-wider transition-all hover:text-pink-deep ${
                   pathname === link.href 
                     ? 'text-pink-deep font-semibold' 
                     : 'text-charcoal'

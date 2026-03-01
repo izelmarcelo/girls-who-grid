@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic"
 
 import type { Metadata } from 'next'
-import { Outfit, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Bebas_Neue, Inter, Caveat, JetBrains_Mono } from 'next/font/google'
 import { cn } from '@/utilities/ui'
 import React from 'react'
 
@@ -16,17 +16,24 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 
-const outfit = Outfit({
+const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400'],
   variable: '--font-heading',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-body',
+  display: 'swap',
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-accent',
   display: 'swap',
 })
 
@@ -42,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html 
-      className={cn(outfit.variable, dmSans.variable, jetbrainsMono.variable)} 
+      className={cn(bebasNeue.variable, inter.variable, caveat.variable, jetbrainsMono.variable)} 
       lang="en" 
       suppressHydrationWarning
     >
