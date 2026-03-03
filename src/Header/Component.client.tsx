@@ -46,9 +46,9 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
             <Image
               src="/logo.png"
               alt="Girls Who Grid"
-              width={50}
-              height={50}
-              className="w-12 h-12"
+              width={160}
+              height={120}
+              className="w-auto h-10"
               priority
             />
             <span className="text-2xl text-charcoal hidden sm:inline font-heading tracking-wider">
