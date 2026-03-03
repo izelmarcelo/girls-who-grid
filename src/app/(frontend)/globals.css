@@ -146,6 +146,7 @@
 
   .font-accent {
     font-family: var(--font-accent);
+    letter-spacing: -0.02em;
   }
 
   .font-heading {
