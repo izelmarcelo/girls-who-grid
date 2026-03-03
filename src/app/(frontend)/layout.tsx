@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic"
 
 import type { Metadata } from 'next'
-import { Bebas_Neue, Inter, Caveat, JetBrains_Mono } from 'next/font/google'
+import { Bebas_Neue, Inter, JetBrains_Mono } from 'next/font/google'
 import { cn } from '@/utilities/ui'
 import React from 'react'
 
@@ -30,12 +30,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const caveat = Caveat({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-accent',
-  display: 'swap',
-})
+// Felt Tip Woman loaded via Adobe Typekit in <head>
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -49,12 +44,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html 
-      className={cn(bebasNeue.variable, inter.variable, caveat.variable, jetbrainsMono.variable)} 
+      className={cn(bebasNeue.variable, inter.variable, jetbrainsMono.variable)} 
       lang="en" 
       suppressHydrationWarning
     >
       <head>
         <InitTheme />
+        <link rel="stylesheet" href="https://use.typekit.net/dat7hlm.css" />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <link href="/logo.png" rel="apple-touch-icon" />
