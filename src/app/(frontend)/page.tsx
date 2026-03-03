@@ -14,7 +14,7 @@ export default async function HomePage() {
       sort: '-createdAt',
     })
     posts = result.docs
-  } catch (e) {
+  } catch (_e) {
     // No posts yet
   }
 
@@ -42,14 +42,13 @@ export default async function HomePage() {
 
         {/* Headline */}
         <h1 className="text-center tracking-wider px-4" style={{ fontSize: 'clamp(4rem, 10vw, 9rem)', lineHeight: '0.9' }}>
-          MOTORSPORT<br/>
-          <span style={{ color: 'var(--pink-deep)' }}>CULTURE</span><br/>
-          REDEFINED
+          SHE&apos;S ALREADY<br/>
+          <span style={{ color: 'var(--pink-deep)' }}>ON THE GRID.</span>
         </h1>
 
         {/* Handwritten subtitle */}
-        <p className="font-accent text-2xl md:text-3xl mt-6 text-center" style={{ color: 'var(--gray-soft)' }}>
-          by women, for women — on the grid and beyond
+        <p className="font-accent text-2xl md:text-3xl mt-6 text-center px-4 max-w-2xl" style={{ color: 'var(--gray-soft)' }}>
+          she doesn&apos;t need an invitation to the paddock. she already knows the way.
         </p>
 
         {/* CTAs */}
@@ -73,30 +72,83 @@ export default async function HomePage() {
         <div className="flex whitespace-nowrap marquee-track">
           {[...Array(6)].map((_, i) => (
             <span key={i} className="mx-8 text-xl tracking-[0.3em] font-heading" style={{ color: 'var(--lime-accent)' }}>
-              GIRLS WHO GRID ✦ SHE&apos;S ALREADY ON THE GRID ✦ RACING BEYOND BOUNDARIES ✦
+              ON THE GRID ✦ IN THE GAME ✦ GIRLS WHO GRID ✦ RACING BEYOND BOUNDARIES ✦
             </span>
           ))}
         </div>
       </section>
 
-      {/* =================== MISSION (Pink Section) =================== */}
-      <section className="py-20 md:py-28" style={{ background: 'var(--pink-light)' }}>
+      {/* =================== BRAND INTRO =================== */}
+      <section className="py-20 md:py-28" style={{ background: 'var(--cream)' }}>
         <div className="container max-w-4xl mx-auto text-center px-6">
-          <p className="font-accent text-xl mb-4" style={{ color: 'var(--pink-deep)' }}>our mission</p>
-          <h2 className="mb-6">
-            FROM THE GRANDSTANDS<br/>TO THE GARAGE
-          </h2>
-          <p className="text-lg md:text-xl leading-relaxed" style={{ color: 'var(--charcoal)' }}>
-            We&apos;re amplifying the women who show up on the grid — every race, every series, every day. 
-            This isn&apos;t a site painted pink. It&apos;s a platform built with <em className="font-accent text-2xl" style={{ color: 'var(--pink-deep)' }}>intention</em> — 
-            where craft meets motorsport culture, where style meets substance, 
-            where every woman who loves racing finds her people.
+          <p className="font-accent text-xl mb-4" style={{ color: 'var(--pink-deep)' }}>who we are</p>
+          <h2 className="mb-8">THE COMMUNITY AND<br/>CONTENT PLATFORM FOR<br/>WOMEN IN MOTORSPORT</h2>
+          <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto" style={{ color: 'var(--charcoal)' }}>
+            We serve fans, professionals, creators, and newcomers who are passionate about racing 
+            and tired of being treated as outsiders in a sport they love. Through original content, 
+            community programming, and brand partnerships, GWG is building the most visible and 
+            engaged network of women in motorsport.
+          </p>
+          <p className="font-accent text-2xl mt-6" style={{ color: 'var(--pink-deep)' }}>
+            We don&apos;t soften the sport. We make space in it.
           </p>
         </div>
       </section>
 
-      {/* =================== FEATURED CONTENT =================== */}
+      {/* =================== MISSION (Pink Section) =================== */}
+      <section className="py-20 md:py-28" style={{ background: 'var(--pink-light)' }}>
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="font-accent text-xl mb-4" style={{ color: 'var(--pink-deep)' }}>our mission</p>
+              <h2>FROM THE<br/>GRANDSTANDS<br/>TO THE GARAGE</h2>
+            </div>
+            <div>
+              <p className="text-lg leading-relaxed mb-6">
+                Motorsport has always had women in it — in the stands, in the garage, behind the wheel, 
+                and behind the scenes. But the culture around the sport hasn&apos;t always reflected that.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                From the fan who plans her entire year around the race calendar to the engineer optimizing 
+                downforce packages, from the content creator documenting her first paddock experience to 
+                the sim racer grinding leaderboards at midnight — <em className="font-accent text-2xl" style={{ color: 'var(--pink-deep)' }}>Girls Who Grid is where these women find each other.</em>
+              </p>
+              <p className="text-lg leading-relaxed">
+                We don&apos;t make motorsport &ldquo;more feminine.&rdquo; We make the women who already love it more visible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =================== CONTENT PILLARS =================== */}
       <section className="py-20 md:py-28" style={{ background: 'var(--cream)' }}>
+        <div className="container max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="font-accent text-xl mb-2" style={{ color: 'var(--pink-deep)' }}>what we cover</p>
+            <h2>CONTENT THAT<br/>MOVES THE NEEDLE</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Race Culture', desc: 'Real-time race coverage, reactions, recaps, and hot takes that feel like debriefing with your smartest friend at the track.', color: 'var(--pink-light)' },
+              { title: 'Women on the Grid', desc: 'Profiles, interviews, and career spotlights across all motorsport roles — from drivers to engineers to the fans who make this sport pulse.', color: 'var(--blue-soft)' },
+              { title: 'The Fan Experience', desc: 'Race weekend guides, travel intel, gear reviews, and everything you need to show up to the paddock like you own it.', color: 'var(--lime-accent)' },
+              { title: 'Knowledge & Access', desc: 'Educational content that demystifies motorsport for newer fans. You don\'t need to know the difference between hard and soft compound to belong here.', color: 'var(--pink-light)' },
+              { title: 'Style & Gear', desc: 'Race day outfits, gear that works as hard as your favorite driver, and the lifestyle content that bridges motorsport and everyday identity.', color: 'var(--blue-soft)' },
+              { title: 'Community Moments', desc: 'Member spotlights, event recaps, and the real stories of women who turned passion into pit lane passes.', color: 'var(--lime-accent)' },
+            ].map((pillar, i) => (
+              <div key={i} className="neu-card p-6" style={{ borderTop: `4px solid ${pillar.color}` }}>
+                <h3 className="text-2xl mb-3">{pillar.title}</h3>
+                <p style={{ color: 'var(--gray-soft)' }}>{pillar.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =================== FEATURED POSTS =================== */}
+      <section className="py-20 md:py-28" style={{ background: 'var(--pink-light)' }}>
         <div className="container max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="font-accent text-xl mb-2" style={{ color: 'var(--pink-deep)' }}>from the pit lane</p>
@@ -110,12 +162,13 @@ export default async function HomePage() {
                   key={post.id} 
                   href={`/posts/${post.slug}`}
                   className="neu-card p-0 overflow-hidden group"
+                  style={{ background: 'var(--cream)' }}
                 >
                   {post.heroImage && typeof post.heroImage !== 'number' && (
                     <div className="aspect-video overflow-hidden">
                       <Image
-                        src={post.heroImage.url || ''}
-                        alt={post.heroImage.alt || ''}
+                        src={(post.heroImage as any).url || ''}
+                        alt={(post.heroImage as any).alt || ''}
                         width={400}
                         height={225}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -123,19 +176,11 @@ export default async function HomePage() {
                     </div>
                   )}
                   {(!post.heroImage || typeof post.heroImage === 'number') && (
-                    <div className="aspect-video flex items-center justify-center" style={{ background: 'var(--pink-light)' }}>
-                      <span className="font-heading text-4xl" style={{ color: 'var(--pink-deep)' }}>GWG</span>
+                    <div className="aspect-video flex items-center justify-center" style={{ background: 'var(--blue-soft)' }}>
+                      <span className="font-heading text-4xl" style={{ color: 'var(--charcoal)', opacity: 0.3 }}>GWG</span>
                     </div>
                   )}
                   <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      {post.categories && post.categories.length > 0 && (
-                        <span className="inline-block px-3 py-1 text-xs font-mono rounded-full" 
-                          style={{ background: 'var(--lime-accent)', color: 'var(--charcoal)' }}>
-                          {typeof post.categories[0] === 'object' ? post.categories[0].title : ''}
-                        </span>
-                      )}
-                    </div>
                     <h3 className="text-2xl group-hover:text-pink-deep transition-colors">
                       {post.title}
                     </h3>
@@ -150,21 +195,22 @@ export default async function HomePage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {['Race Recap', 'Style Guide', 'Community'].map((cat, i) => (
-                <div key={i} className="neu-card p-0 overflow-hidden">
-                  <div className="aspect-video flex items-center justify-center" 
-                    style={{ background: i === 0 ? 'var(--pink-light)' : i === 1 ? 'var(--blue-soft)' : 'var(--lime-accent)' }}>
-                    <span className="font-heading text-5xl" style={{ color: 'var(--charcoal)', opacity: 0.3 }}>GWG</span>
+              {[
+                { cat: 'Race Recap', title: 'Monaco Weekend: The Good, The Chaotic, and The Champagne', desc: 'From the yachts to the pit lane, we break down the most glamorous race weekend of the year.', bg: 'var(--cream)' },
+                { cat: 'Style Guide', title: 'What to Wear to Your First Race Weekend', desc: 'Our guide to dressing for the paddock without losing your personal style.', bg: 'var(--blue-soft)' },
+                { cat: 'Community', title: 'Meet the Girls: 5 Fans Who Turned Passion Into Pit Lane Passes', desc: 'Inspiring stories from our community members who made their racing dreams real.', bg: 'var(--lime-accent)' },
+              ].map((post, i) => (
+                <div key={i} className="neu-card p-0 overflow-hidden" style={{ background: 'var(--cream)' }}>
+                  <div className="aspect-video flex items-center justify-center" style={{ background: post.bg }}>
+                    <span className="font-heading text-5xl" style={{ color: 'var(--charcoal)', opacity: 0.15 }}>GWG</span>
                   </div>
                   <div className="p-6">
                     <span className="inline-block px-3 py-1 text-xs font-mono rounded-full mb-3"
                       style={{ background: 'var(--lime-accent)', color: 'var(--charcoal)' }}>
-                      {cat}
+                      {post.cat}
                     </span>
-                    <h3 className="text-2xl">Coming Soon</h3>
-                    <p className="mt-2 text-sm font-accent text-lg" style={{ color: 'var(--gray-soft)' }}>
-                      Fresh content is on its way...
-                    </p>
+                    <h3 className="text-xl mb-2">{post.title}</h3>
+                    <p className="text-sm" style={{ color: 'var(--gray-soft)' }}>{post.desc}</p>
                   </div>
                 </div>
               ))}
@@ -173,26 +219,31 @@ export default async function HomePage() {
 
           <div className="text-center mt-12">
             <Link href="/posts" className="neu-button-dark inline-block px-8 py-4">
-              View All Posts
+              Read More Stories
             </Link>
           </div>
         </div>
       </section>
 
-      {/* =================== COMMUNITY STATS (Blue Section) =================== */}
+      {/* =================== COMMUNITY (Blue Section) =================== */}
       <section className="py-20 md:py-28" style={{ background: 'var(--blue-soft)' }}>
         <div className="container max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="font-accent text-xl mb-2" style={{ color: 'var(--charcoal)' }}>join the grid</p>
-            <h2>WE&apos;RE MORE THAN MERCH.<br/>
-              <span style={{ color: 'var(--pink-deep)' }}>WE&apos;RE A MOVEMENT.</span>
-            </h2>
+            <p className="font-accent text-xl mb-2" style={{ color: 'var(--charcoal)' }}>join the movement</p>
+            <h2>FANDOM IS<br/>BETTER TOGETHER</h2>
+            <p className="text-lg mt-4 max-w-2xl mx-auto">
+              GWG creates belonging for women who&apos;ve felt like outsiders in racing culture. 
+              You don&apos;t need to know the difference between a hard and soft compound to belong here.
+            </p>
+            <p className="font-accent text-xl mt-2" style={{ color: 'var(--charcoal)' }}>
+              (But you might after hanging out with us.)
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               { num: '15K+', label: 'Community Members', sub: 'and growing every race weekend' },
-              { num: '50+', label: 'Races Covered', sub: 'from karting to Formula 1' },
+              { num: '50+', label: 'Races Covered', sub: 'F1, IndyCar, NASCAR, MotoGP & beyond' },
               { num: '100+', label: 'Women Featured', sub: 'drivers, engineers, fans, creators' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
@@ -222,34 +273,38 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* =================== MERCH TEASER (Lime Section) =================== */}
+      {/* =================== PARTNERSHIPS (Lime Section) =================== */}
       <section className="py-20 md:py-28" style={{ background: 'var(--lime-accent)' }}>
         <div className="container max-w-4xl mx-auto px-6 text-center">
-          <p className="font-accent text-xl mb-2" style={{ color: 'var(--charcoal)' }}>coming soon</p>
-          <h2>START YOUR ENGINES,<br/>YOUR CLOSET&apos;S CALLING</h2>
-          <p className="text-lg mt-6 mb-10 max-w-2xl mx-auto">
-            Race day to any day. Motorsport apparel that&apos;s as bold as the women who wear it.
+          <p className="font-accent text-xl mb-2" style={{ color: 'var(--charcoal)' }}>for brands</p>
+          <h2>WOMEN ARE NOT A<br/>NICHE AUDIENCE<br/>IN MOTORSPORT</h2>
+          <p className="text-lg mt-6 mb-4 max-w-2xl mx-auto">
+            Girls Who Grid reaches the fastest-growing segment in motorsport: 
+            women who don&apos;t just watch the race — they drive the conversation.
           </p>
-          <Link href="/shop" className="neu-button-dark inline-block px-10 py-5 text-xl">
-            Shop Coming Soon
+          <p className="font-accent text-xl mb-10">
+            They are the fastest-growing audience. Period.
+          </p>
+          <Link href="/contact" className="neu-button-dark inline-block px-10 py-5 text-xl">
+            Partner With Us
           </Link>
         </div>
       </section>
 
-      {/* =================== NEWSLETTER CTA (Pink Gradient) =================== */}
+      {/* =================== NEWSLETTER CTA =================== */}
       <section className="py-20 md:py-28" 
         style={{ background: 'linear-gradient(135deg, var(--pink-primary) 0%, var(--pink-deep) 100%)' }}>
         <div className="container max-w-4xl mx-auto px-6 text-center">
-          <p className="font-accent text-xl mb-2" style={{ color: 'var(--white)' }}>stay connected</p>
+          <p className="font-accent text-xl mb-2" style={{ color: 'var(--white)' }}>the starting grid</p>
           <h2 style={{ color: 'var(--white)' }}>PIT STOP IN<br/>YOUR INBOX</h2>
           <p className="text-lg mt-4 mb-10" style={{ color: 'rgba(255,255,255,0.9)' }}>
-            Race recaps, style drops, and community invites — no spam, just speed.
+            Weekly race intel, community highlights, and exclusive content. No spam, just speed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input 
               type="email" 
               placeholder="you@example.com" 
-              className="flex-1 px-6 py-4 rounded-xl text-base neu-inset"
+              className="flex-1 px-6 py-4 rounded-xl text-base"
               style={{ background: 'rgba(255,255,255,0.9)', color: 'var(--charcoal)' }}
             />
             <button className="neu-button-dark px-8 py-4">
