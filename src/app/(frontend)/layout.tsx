@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic"
 
 import type { Metadata } from 'next'
-import { Bebas_Neue, Inter, JetBrains_Mono } from 'next/font/google'
+import { Bebas_Neue, Poppins, JetBrains_Mono } from 'next/font/google'
 import { cn } from '@/utilities/ui'
 import React from 'react'
 
@@ -23,7 +23,7 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 })
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
@@ -44,7 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html 
-      className={cn(bebasNeue.variable, inter.variable, jetbrainsMono.variable)} 
+      className={cn(bebasNeue.variable, poppins.variable, jetbrainsMono.variable)} 
       lang="en" 
       suppressHydrationWarning
     >
