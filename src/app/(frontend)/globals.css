@@ -1,9 +1,9 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
-@config '../../../tailwind.config.mjs';
+@config "../../../tailwind.config.mjs";
 
-@custom-variant dark (&:is([data-theme='dark'] *));
+@custom-variant dark (&:is([data-theme="dark"] *));
 @custom-variant sm (@media (width >= theme(--breakpoint-sm)));
 @custom-variant md (@media (width >= theme(--breakpoint-md)));
 @custom-variant lg (@media (width >= theme(--breakpoint-lg)));
@@ -24,16 +24,34 @@
 @source inline("lg:col-span-8");
 @source inline("lg:col-span-12");
 
+/* Tan Memories Script Font */
+@font-face {
+  font-family: "Tan Memories";
+  src: url("/fonts/tan-memories.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tan Memories";
+  src: url("/fonts/tan-memories-2.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 86rem;
-  --font-heading: 'Bebas Neue', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-  --font-accent: 'felt-tip-woman', cursive;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-accent: "felt-tip-woman", cursive;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-script: "Tan Memories", cursive;
 }
 
 @layer utilities {
@@ -72,6 +90,88 @@
     .container {
       max-width: var(--breakpoint-2xl);
     }
+  }
+
+  /* Script Font Utility */
+  .font-script {
+    font-family: "Tan Memories", cursive;
+  }
+
+  /* Noise/Grain Texture */
+  .texture-grain {
+    position: relative;
+  }
+  .texture-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Checkered Pattern Overlay */
+  .checkered-overlay {
+    position: relative;
+  }
+  .checkered-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.03) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.03) 75%);
+    background-size: 30px 30px;
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Frosted Glass Effect */
+  .glass-blur {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Metallic/Chrome Text */
+  .text-chrome {
+    background: linear-gradient(145deg, #c0c0c0 0%, #e8e8e8 30%, #a8a8a8 50%, #d4d4d4 70%, #b0b0b0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Metallic Border/Frame */
+  .frame-chrome {
+    border: 3px solid;
+    border-image: linear-gradient(145deg, #c0c0c0, #e8e8e8, #a8a8a8, #d4d4d4) 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+
+  /* Racing Stripe Divider */
+  .racing-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      var(--pink-deep) 10%, 
+      var(--pink-deep) 20%, 
+      transparent 20%,
+      transparent 40%,
+      #c0c0c0 40%,
+      #e8e8e8 50%,
+      #c0c0c0 60%,
+      transparent 60%,
+      transparent 80%,
+      var(--lime-accent) 80%,
+      var(--lime-accent) 90%,
+      transparent 100%
+    );
+    margin: 2rem 0;
   }
 
   /* Neumorphic Design Utilities */
