@@ -303,7 +303,7 @@
     font-family: var(--font-heading);
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
   }
 
   h1 {

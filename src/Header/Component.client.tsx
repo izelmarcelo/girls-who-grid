@@ -34,7 +34,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-2' : 'py-4'
+        isScrolled ? 'py-4' : 'py-4'
       }`}
     >
       <div className="container">
@@ -48,12 +48,10 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               alt="Girls Who Grid"
               width={160}
               height={120}
-              className="w-auto h-10"
+              className="w-auto h-14"
               priority
             />
-            <span className="text-2xl text-charcoal hidden sm:inline font-heading tracking-wider">
-              Girls Who Grid
-            </span>
+
           </Link>
 
           {/* Desktop Navigation */}
@@ -62,7 +60,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-base font-heading tracking-wider transition-all hover:text-pink-deep ${
+                className={`text-lg font-heading tracking-wider transition-all hover:text-pink-deep ${
                   pathname === link.href 
                     ? 'text-pink-deep font-semibold' 
                     : 'text-charcoal'

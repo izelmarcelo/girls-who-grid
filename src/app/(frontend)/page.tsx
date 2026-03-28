@@ -131,10 +131,7 @@ export default async function HomePage() {
         {/* Frosted glass background for content */}
         <div className="absolute inset-0 glass-blur opacity-30 pointer-events-none" />
         
-        {/* Decorative line art */}
-        <div className="absolute top-10 right-10 w-64 h-64 opacity-20 pointer-events-none hidden lg:block">
-          <Image src="/brand/branding-05.png" alt="" width={256} height={256} className="object-contain" />
-        </div>
+
 
         {/* Script font overlay - decorative background text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
@@ -173,16 +170,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center">
-          {/* Logo */}
-          <div className="relative mb-8">
-            <Image 
-              src="/logo.png" 
-              alt="Girls Who Grid" 
-              width={120} 
-              height={120} 
-              className="drop-shadow-lg"
-            />
-          </div>
+
 
           {/* Headline */}
           <h1 
@@ -212,7 +200,7 @@ export default async function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 font-accent text-xl text-white/60">
+        <div className="absolute bottom-8 font-accent text-2xl md:text-3xl text-white/60">
           scroll down ↓
         </div>
       </section>
@@ -224,7 +212,7 @@ export default async function HomePage() {
       <section className="py-4 overflow-hidden" style={{ background: 'var(--charcoal)' }}>
         <div className="flex whitespace-nowrap marquee-track">
           {[...Array(6)].map((_, i) => (
-            <span key={i} className="mx-8 text-xl tracking-[0.3em] font-heading" style={{ color: 'var(--lime-accent)' }}>
+            <span key={i} className="mx-12 text-xl tracking-[0.2em] font-heading" style={{ color: 'var(--lime-accent)' }}>
               ON THE GRID ✦ IN THE GAME ✦ GIRLS WHO GRID ✦ RACING BEYOND BOUNDARIES ✦
             </span>
           ))}
@@ -248,7 +236,7 @@ export default async function HomePage() {
         </div>
 
         <div className="container max-w-4xl mx-auto text-center px-6 relative z-10">
-          <p className="font-accent text-xl mb-4" style={{ color: 'var(--pink-deep)' }}>who we are</p>
+          <p className="font-accent text-2xl md:text-3xl mb-4" style={{ color: 'var(--pink-deep)' }}>who we are</p>
           <h2 className="mb-8">THE COMMUNITY AND<br/>CONTENT PLATFORM FOR<br/>WOMEN IN MOTORSPORT</h2>
           <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto" style={{ color: 'var(--charcoal)' }}>
             We serve fans, professionals, creators, and newcomers who are passionate about racing 
@@ -396,7 +384,7 @@ export default async function HomePage() {
                 <Link 
                   key={post.id} 
                   href={`/posts/${post.slug}`}
-                  className="neu-card p-0 overflow-hidden group"
+                  className="rounded-2xl overflow-hidden group border border-gray-200/50"
                   style={{ background: 'var(--cream)' }}
                 >
                   {post.heroImage && typeof post.heroImage !== 'number' && (
@@ -435,7 +423,7 @@ export default async function HomePage() {
                 { cat: 'Style Guide', title: 'What to Wear to Your First Race Weekend', desc: 'Our guide to dressing for the paddock without losing your personal style.', bg: 'var(--blue-soft)' },
                 { cat: 'Community', title: 'Meet the Girls: 5 Fans Who Turned Passion Into Pit Lane Passes', desc: 'Inspiring stories from our community members who made their racing dreams real.', bg: 'var(--lime-accent)' },
               ].map((post, i) => (
-                <div key={i} className="neu-card p-0 overflow-hidden" style={{ background: 'var(--cream)' }}>
+                <div key={i} className="rounded-2xl overflow-hidden border border-gray-200/50" style={{ background: 'var(--cream)' }}>
                   <div className="aspect-video flex items-center justify-center" style={{ background: post.bg }}>
                     <span className="font-heading text-5xl" style={{ color: 'var(--charcoal)', opacity: 0.15 }}>GWG</span>
                   </div>
